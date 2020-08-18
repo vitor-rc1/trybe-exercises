@@ -1,3 +1,3 @@
 #!/bin/bash
-#Vou ter muito sucesso na programação
+# Eu sou Trybe de coração
 echo "Shell Script é demais"
