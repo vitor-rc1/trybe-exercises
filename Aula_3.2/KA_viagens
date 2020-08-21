@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Project: Travel webpage</title>
+        <style>
+            h1 {
+                background:yellow;
+            }
+            img {
+                background:blue;
+            }
+            .cores {
+                font-weight:bold;
+            }
+        </style>
+    </head>
+    <body>
+    
+        <h1>Travel to ....</h1>
+        <h2>Arizona</h2>
+        <p>Um lugar muito bonito </p>
+        <img src="https://www.kasandbox.org/programming-images/avatars/leafers-sapling.png">
+        <img src="https://www.kasandbox.org/programming-images/avatars/leafers-seed.png">
+        <p class="cores">Coisas para se fazer</p>
+        <ul>
+            <li>Caminhar</li>
+            <li>Festejar</li>
+        </ul>
+        
+        <h2>Arizona</h2>
+        <p>Um lugar muito bonito </p>
+        <img src="https://www.kasandbox.org/programming-images/avatars/leafers-sapling.png">
+        <img src="https://www.kasandbox.org/programming-images/avatars/leafers-seed.png">
+        <p>Coisas para se fazer</p>
+        <ul>
+            <li>Caminhar</li>
+            <li>Festejar</li>
+        </ul>
+        
+    </body>
+</html>
