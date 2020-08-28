@@ -1,3 +1,5 @@
+// Utilizando o array criado no exercício anterior imprima o resultado da divisão de cada um dos elementos por 2.
+
 let array = []
 let arrayLength = 25
 let arrayDiv2 = []
