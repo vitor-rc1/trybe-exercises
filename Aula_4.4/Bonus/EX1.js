@@ -21,15 +21,13 @@ function romanoToDec(romano){
         }
     }
     console.log(totalArray)
-    for (let i = 0; i < totalArray.length; i += 2) {
-        if(i+1 == totalArray.length ){
-            total += totalArray[i]
-        }
-        else if (totalArray[i]>=totalArray[i+1]){
-            total += totalArray[i] + totalArray[i+1]
-        }
-        else if (totalArray[i]<totalArray[i+1]) {
+    for (let i = 0; i < totalArray.length; i += 1) {
+        if (totalArray[i] < totalArray[i+1]){
             total += totalArray[i+1] - totalArray[i]
+            i += 1;
+        }
+        else {
+            total += totalArray[i]
         }
         
     }
@@ -37,6 +35,6 @@ function romanoToDec(romano){
 
 }
 
-console.log(romanoToDec("CMXCIX"))
+console.log(romanoToDec("MDCCCXCII"))
 
 
