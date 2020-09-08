@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" Element="width=device-width" />
     <title>Exercício 5.2</title>
     <style>
       div {
@@ -14,43 +14,43 @@
         text-align: center;
       }
 
-      .main-content {
+      .main-Element {
         background-color: yellow;
       }
 
-      .main-content .center-content {
+      .main-Element .center-Element {
         background-color: red;
         width: 50%;
         margin-left: auto;
         margin-right: auto;
       }
 
-      .main-content .center-content p {
+      .main-Element .center-Element p {
         font-style: italic;
       }
 
-      .main-content .left-content {
+      .main-Element .left-Element {
         background-color: green;
         width: 60%;
         margin-left: 0;
         margin-right: auto;
       }
 
-      .main-content .left-content .small-image {
+      .main-Element .left-Element .small-image {
         display: block;
         margin-left: auto;
         margin-right: auto;
         border-radius: 100%;
       }
 
-      .main-content .right-content {
+      .main-Element .right-Element {
         background-color: blue;
         width: 60%;
         margin-left: auto;
         margin-right: 0;
       }
 
-      .main-content .description {
+      .main-Element .description {
         text-align: center;
       }
     </style>
@@ -67,38 +67,60 @@
       body.appendChild(title)
 
       //EX2
-      // Adicione a tag div com a classe main-content como filho da tag body;
-      let mainContent = document.createElement('div')
-      mainContent.className = 'main-content'
-      body.appendChild(mainContent) 
+      // Adicione a tag div com a classe main-Element como filho da tag body;
+      let mainElement = document.createElement('div')
+      mainElement.className = 'main-Element'
+      body.appendChild(mainElement) 
 
       //EX3
-      // Adicione a tag div com a classe center-content como filho da tag div criada no passo 2;
-      let centerContent = document.createElement('div')
-      centerContent.className = 'center-content'
-      mainContent.appendChild(centerContent) 
+      // Adicione a tag div com a classe center-Element como filho da tag div criada no passo 2;
+      let centerElement = document.createElement('div')
+      centerElement.className = 'center-Element'
+      mainElement.appendChild(centerElement) 
 
       //EX4
       // Adicione a tag p como filho do div criado no passo 3 e coloque algum texto;
       let paragraph = document.createElement('p')
       paragraph.innerText = 'Algum texto bacana'
-      centerContent.appendChild(paragraph)
+      centerElement.appendChild(paragraph)
 
       //EX5
-      // Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;
+      // Adicione a tag div com a classe left-Element como filho da tag div criada no passo 2;
+      let leftElement = document.createElement('div')
+      leftElement.className = 'left-Element'
+      mainElement.appendChild(leftElement)
 
       //EX6
-      // Adicione a tag div com a classe right-content como filho da tag div criada no passo 2;
+      // Adicione a tag div com a classe right-Element como filho da tag div criada no passo 2;
+      let rightElement = document.createElement('div')
+      rightElement.className = 'right-Element'
+      mainElement.appendChild(rightElement)
 
       //EX7
       // Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image. Esse elemento deve ser filho do div criado no passo 5;
+      let imgElement = document.createElement('img')
+      imgElement.className = 'small-image'
+      imgElement.src = 'https://picsum.photos/200'
+      leftElement.appendChild(imgElement)
 
       //EX8
       // Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6;
+      let list = document.createElement('ul')
+      for (let i=1; i<=10; i += 1){
+        let item = document.createElement('li')
+        item.innerText = i
+        list.appendChild(item)
+      }
+      rightElement.appendChild(list)
 
       //EX9
       // Adicione 3 tags h3, todas sendo filhas do div criado no passo 2.
-
+      let subTitlesItems = ['texto', 'imagem', 'lista']
+      for (let cont = 0; cont < 3; cont += 1){
+        let subtitle = document.createElement('h3')
+        subtitle.innerText = subTitlesItems[cont]
+        mainElement.appendChild(subtitle)
+      }
 
       
     </script>
