@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" Element="width=device-width" />
+    <meta name="viewport" content="width=device-width" />
     <title>Exercício 5.2</title>
     <style>
       div {
@@ -14,43 +14,43 @@
         text-align: center;
       }
 
-      .main-Element {
+      .main-content {
         background-color: yellow;
       }
 
-      .main-Element .center-Element {
+      .main-content .center-content {
         background-color: red;
         width: 50%;
         margin-left: auto;
         margin-right: auto;
       }
 
-      .main-Element .center-Element p {
+      .main-content .center-content p {
         font-style: italic;
       }
 
-      .main-Element .left-Element {
+      .main-content .left-content {
         background-color: green;
         width: 60%;
         margin-left: 0;
         margin-right: auto;
       }
 
-      .main-Element .left-Element .small-image {
+      .main-content .left-content .small-image {
         display: block;
         margin-left: auto;
         margin-right: auto;
         border-radius: 100%;
       }
 
-      .main-Element .right-Element {
+      .main-content .right-content {
         background-color: blue;
         width: 60%;
         margin-left: auto;
         margin-right: 0;
       }
 
-      .main-Element .description {
+      .main-content .description {
         text-align: center;
       }
     </style>
@@ -67,41 +67,41 @@
       body.appendChild(title)
 
       //EX2
-      // Adicione a tag div com a classe main-Element como filho da tag body;
-      let mainElement = document.createElement('div')
-      mainElement.className = 'main-Element'
-      body.appendChild(mainElement) 
+      // Adicione a tag div com a classe main-content como filho da tag body;
+      let mainContent = document.createElement('div')
+      mainContent.className = 'main-content'
+      body.appendChild(mainContent) 
 
       //EX3
-      // Adicione a tag div com a classe center-Element como filho da tag div criada no passo 2;
-      let centerElement = document.createElement('div')
-      centerElement.className = 'center-Element'
-      mainElement.appendChild(centerElement) 
+      // Adicione a tag div com a classe center-content como filho da tag div criada no passo 2;
+      let centerContent = document.createElement('div')
+      centerContent.className = 'center-content'
+      mainContent.appendChild(centerContent) 
 
       //EX4
       // Adicione a tag p como filho do div criado no passo 3 e coloque algum texto;
       let paragraph = document.createElement('p')
       paragraph.innerText = 'Algum texto bacana'
-      centerElement.appendChild(paragraph)
+      centerContent.appendChild(paragraph)
 
       //EX5
-      // Adicione a tag div com a classe left-Element como filho da tag div criada no passo 2;
-      let leftElement = document.createElement('div')
-      leftElement.className = 'left-Element'
-      mainElement.appendChild(leftElement)
+      // Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;
+      let leftContent = document.createElement('div')
+      leftContent.className = 'left-content'
+      mainContent.appendChild(leftContent)
 
       //EX6
-      // Adicione a tag div com a classe right-Element como filho da tag div criada no passo 2;
-      let rightElement = document.createElement('div')
-      rightElement.className = 'right-Element'
-      mainElement.appendChild(rightElement)
+      // Adicione a tag div com a classe right-content como filho da tag div criada no passo 2;
+      let rightContent = document.createElement('div')
+      rightContent.className = 'right-content'
+      mainContent.appendChild(rightContent)
 
       //EX7
-      // Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image. Esse elemento deve ser filho do div criado no passo 5;
-      let imgElement = document.createElement('img')
-      imgElement.className = 'small-image'
-      imgElement.src = 'https://picsum.photos/200'
-      leftElement.appendChild(imgElement)
+      // Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image. Esse contento deve ser filho do div criado no passo 5;
+      let imgContent = document.createElement('img')
+      imgContent.className = 'small-image'
+      imgContent.src = 'https://picsum.photos/200'
+      leftContent.appendChild(imgContent)
 
       //EX8
       // Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6;
@@ -111,16 +111,42 @@
         item.innerText = i
         list.appendChild(item)
       }
-      rightElement.appendChild(list)
+      rightContent.appendChild(list)
 
       //EX9
       // Adicione 3 tags h3, todas sendo filhas do div criado no passo 2.
       let subTitlesItems = ['texto', 'imagem', 'lista']
       for (let cont = 0; cont < 3; cont += 1){
         let subtitle = document.createElement('h3')
+        subtitle.className = 'description'
         subtitle.innerText = subTitlesItems[cont]
-        mainElement.appendChild(subtitle)
+        mainContent.appendChild(subtitle)
       }
+
+      /* Modificações dos exercícios acima
+      1. Adicione a classe title na tag h1 criada; - Linha 65
+      2. Adicione a classe description nas 3 tags h3 criadas; - Linha 121
+      3. Remova o div criado no passo 5 (aquele que possui a classe left-content). Utilize a função .removeChild(); - Linhas 135 e 136
+      4. Centralize o div criado no passo 6 (aquele que possui a classe right-content). Dica: para centralizar, basta configurar o margin-right: auto do div; - Linha 4
+      5. Troque a cor de fundo do elemento pai da div criada no passo 3 (aquela que possui a classe center-content) para a cor verde; - Linha 5
+      6. Remova os dois últimos contentos (nove e dez) da lista criada no passo 8. - Linhas 147 e 148
+      */
+
+      //Item 3 de modificações
+      let mainElementContent = document.querySelector('.main-content')
+      mainElementContent.removeChild(leftContent)
+
+      // Item 4 de modificações
+      let divs = document.querySelectorAll('div')
+      divs[2].style = 'margin-right: auto'
+
+      // Item 5
+      divs[1].style = 'background-color: green'
+
+      // Item 6
+      list.lastElementChild.remove()
+      list.lastElementChild.remove()
+      
 
       
     </script>
