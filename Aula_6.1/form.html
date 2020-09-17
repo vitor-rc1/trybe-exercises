@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form action="get">
+    <fieldset>
+      <div class="line-form">
+        <label for="nome">Nome</label>
+        <input type="text" maxlength="40" id="nome" name="nome" required>
+      </div>
+
+      <div class="line-form">
+        <label for="email">Email</label>
+        <input type="email" maxlength="50" id="email" name="email" required>
+      </div>
+
+      <div class="line-form">
+        <label for="cpf">CPF</label>
+        <input type="text" maxlength="11" id="cpf" name="cpf" required>
+      </div>
+
+      <div class="line-form">
+        <label for="endereco">Endereço</label>
+        <input type="text" maxlength="200" id="endereco" name="endereco" required>
+      </div>
+      
+      <div class="line-form">
+        <label for="cidade">Cidade</label>
+        <input type="text" maxlength="28" id="cidade" name="cidade" required>
+      </div>
+
+      <div class="line-form">
+        <label for="estado">Estado</label>
+        <select id="estados" name="estados"></select>
+      </div>
+
+      <div class="line-form">
+        Moradia
+        <input type="radio" id="casa" name="moradia" value="casa" required>
+        <label for="casa">Casa</label>
+
+        <input type="radio" id="ap" name="moradia" value="ap" required>
+        <label for="ap">Apartamento</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <div class="line-form">
+        <label for="resumo">Resumo do currículo</label>
+        <textarea name="resumo" id="resumo" cols="30" rows="10" maxlength="1000" required></textarea>
+      </div>
+
+      <div class="line-form">
+        <label for="cargo">Cargo</label>
+        <input type="text" maxlength="40" id="cargo" name="cargo" required>
+      </div>
+
+      <div class="line-form">
+        <label for="desc-cargo">Descrição do cargo</label>
+        <input type="text" maxlength="28" id="desc-cargo" name="desc-cargo" required>
+      </div>
+
+      <div class="line-form">
+        <label for="inicio">Inicio</label>
+        <input type="date" id="inicio" name="inicio" required>
+      </div>
+    </fieldset>
+
+    <button type="submit" id="submissao">Submit</button>
+  </form>
+
+  <div id="resultado"></div>
+<script src="script.js"></script>
+</body>
+</html>
