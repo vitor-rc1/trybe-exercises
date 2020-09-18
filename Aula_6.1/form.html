@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <form action="get">
+  <form>
     <fieldset>
       <div class="line-form">
         <label for="nome">Nome</label>
@@ -41,10 +41,10 @@
 
       <div class="line-form">
         Moradia
-        <input type="radio" id="casa" name="moradia" value="casa" required>
+        <input type="radio" id="casa" name="moradia" value="Casa" required>
         <label for="casa">Casa</label>
 
-        <input type="radio" id="ap" name="moradia" value="ap" required>
+        <input type="radio" id="ap" name="moradia" value="Apartamento" required>
         <label for="ap">Apartamento</label>
       </div>
     </fieldset>
@@ -71,7 +71,7 @@
       </div>
     </fieldset>
 
-    <button type="submit" id="submissao">Submit</button>
+    <button id="submissao">Submit</button>
   </form>
 
   <div id="resultado"></div>
