@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+  <link rel="stylesheet" href="bulma.min.css">
+  <link rel="stylesheet" href="DatePickerX.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <section class="section">
+    <header>
+      <h1 class="title">Banco de talentos</h1>
+      <h2 class="subtitle">Formulário para preenchimento dos seus dados</h2>
+    </header>
+  </section>
+
+  <hr>
+
+  <section class="section">
+    <form>
+      <section class="section">
+        <div class="field">
+          <label class="label" for="nome">Nome</label>
+          <div class="control">
+            <input class="input" type="text" maxlength="40" id="nome" name="nome" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="email">Email</label>
+          <div class="control">
+            <input class="input" type="email" maxlength="50" id="email" name="email" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="cpf">CPF</label>
+          <div class="control">
+            <input class="input" type="text" maxlength="11" id="cpf" name="cpf" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="endereco">Endereço</label>
+          <div class="control">
+            <input class="input" type="text" maxlength="200" id="endereco" name="endereco" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="cidade">Cidade</label>
+          <div class="control">
+            <input class="input" type="text" maxlength="28" id="cidade" name="cidade" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="estado">Estado</label>
+          <div class="control">
+            <div class="select">
+              <select id="estados" name="estados"></select>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Moradia</label>
+          <div class="control">
+            <label class="radio" for="casa">
+              <input type="radio" id="casa" name="moradia" value="Casa" required>
+              Casa</label>
+
+            <label class="radio" for="ap">
+              <input type="radio" id="ap" name="moradia" value="Apartamento" required>
+              Apartamento</label>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="section">
+        <div class="field">
+          <label class="label" for="resumo">Resumo do currículo</label>
+          <div class="control">
+            <textarea class="textarea" name="resumo" id="resumo" cols="30" rows="10" maxlength="1000"
+              required></textarea>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="cargo">Cargo</label>
+          <div class="control">
+            <input class="input" type="text" maxlength="40" id="cargo" name="cargo" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="desc-cargo">Descrição do cargo</label>
+          <div class="control">
+            <input class="input" type="text" maxlength="28" id="desc-cargo" name="desc-cargo" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="inicio">Início</label>
+          <div class="control">
+            <input class="input data" type="date" id="inicio" name="inicio">
+          </div>
+        </div>
+      </section>
+
+
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-link" id="submissao">Submit</button>
+        </div>
+
+        <div class="control">
+          <button type="reset" class="button is-link is-light" id="cancelar">Reset</button>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <div class="content" id="resultado"></div>
+  <script src="DatePickerX.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

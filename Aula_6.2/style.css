@@ -1,0 +1,9 @@
+body {
+  width: 70%;
+  margin: auto;
+}
+
+.data {
+  width: fit-content;
+  text-align: center;
+}
