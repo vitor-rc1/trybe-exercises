@@ -1,4 +1,5 @@
-let estados = ["AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RO", "RS", "RR", "SC", "SE", "SP", "TO" ];
+// Inicializando os estados
+let estados = ["AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RO", "RS", "RR", "SC", "SE", "SP", "TO"];
 
 let sectionEstados = document.querySelector('#estados');
 
@@ -8,13 +9,16 @@ for (let index = 0; index < estados.length; index += 1) {
   option.innerText = estados[index];
   sectionEstados.appendChild(option);
 }
-
-window.DatePickerX.setDefaults({format: 'yyyy-mm-dd'})
+// Date Picker para validação do campo data
+window.DatePickerX.setDefaults({ format: 'yyyy-mm-dd' })
 let inicio = document.querySelector('#inicio').DatePickerX.init();
 
+// Carrega o formulário
 let formulario = document.querySelector('form')
 
-formulario.addEventListener('submit', function(event) {
+formulario.addEventListener('submit', function (event) {
+  event.preventDefault();
+  console.log(document.querySelector('form'))
   let nome = document.querySelector('#nome');
   let email = document.querySelector('#email');
   let cpf = document.querySelector('#cpf');
@@ -31,7 +35,7 @@ formulario.addEventListener('submit', function(event) {
 
   let result = document.querySelector('#resultado')
   let radio = ''
-  if(casa.checked) {
+  if (casa.checked) {
     radio = casa.value;
   }
   else {
@@ -50,6 +54,74 @@ formulario.addEventListener('submit', function(event) {
   Cargo: ${cargo.value} <br>
   Descrição do cargo: ${descCargo.value} <br>
   Data de ínicio: ${inicio.value} <br>
-  `
-  event.preventDefault();
+  `;
+
+})
+
+// Validação dos campos
+
+new window.JustValidate('.js-form', {
+  rules: {
+    name: {
+      required: true,
+      maxLength: 40
+    },
+    email: {
+      required: true,
+      maxLength: 50,
+      email: true
+    },
+    cpf: {
+      required: true,
+      maxLength: 11
+    },
+    endereco: {
+      required: true,
+      maxLength: 200
+    },
+    cidade: {
+      required: true,
+      maxLength: 28
+    },
+    estado: {
+      required: true
+    },
+    radio: {
+      required: true
+    },
+    resumo: {
+      required: true,
+      maxLength: 1000
+    },
+    cargo: {
+      required: true,
+      maxLength: 40
+    },
+    descCargo: {
+      required: true,
+      maxLength: 500
+    },
+    inicio: {
+      required: true
+    }
+  },
+  focusWrongField: true,
+
+  submitHandler: function (form, values, ajax) {
+
+    ajax({
+      url: 'http://127.0.0.1:5500/Aula_6.2',
+      method: 'GET',
+      data: values,
+      async: true,
+      callback: function () {
+        console.log('sucesso')
+      },
+    })
+  },
+  invalidFormCallback: function () {
+    console.log('Falhou')
+    document.querySelector('#resultado').innerHTML=''
+  },
+
 })
