@@ -1,0 +1,21 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 15%;
+  text-align: center;
+  color: black;
+}
+article {
+  text-align: justify;
+}
+hr {
+  width: 100%;
+  height: 1px;
+  color: black;
+  background-color: black;
+}
+
+#edit-params {
+  display: flex; 
+}
