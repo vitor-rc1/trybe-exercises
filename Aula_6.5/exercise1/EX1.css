@@ -1,0 +1,30 @@
+body {
+font-size: 20px;
+margin: 0 5%;
+}
+h1 {
+  font-size: x-large;
+}
+h2 {
+
+}
+
+img {
+    max-width: 100%;
+}
+
+figure {
+    margin: 0;
+    padding: 20px 5px;
+}
+
+@media (min-width: 1150px) {
+  body {
+    background-color: gray;
+    margin: 0 10%;
+  }
+  #image-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
