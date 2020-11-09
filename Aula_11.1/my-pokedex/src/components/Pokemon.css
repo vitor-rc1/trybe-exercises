@@ -1,0 +1,20 @@
+.poke-card {
+  background-color: rgba(209, 204, 204, 0.582);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 350px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px 15px;
+  margin: 10px 0;
+}
+.poke-card:nth-last-child(1) {
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  .poke-card {
+    width: 100%;
+  }
+}
