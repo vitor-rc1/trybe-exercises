@@ -1,5 +1,5 @@
 # trybe-exercises
 Trybe course exercises repository.
-Block 11 - Day 2
+Block 12 - Day 1
 
-**React - Components**
+**React -  States and events**

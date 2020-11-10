@@ -9,12 +9,3 @@
   padding: 5px 15px;
   margin: 10px 0;
 }
-.poke-card:nth-last-child(1) {
-  width: 100%;
-}
-
-@media (max-width: 800px) {
-  .poke-card {
-    width: 100%;
-  }
-}
