@@ -1,0 +1,17 @@
+form {
+  background-color: rosybrown;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: auto;
+  padding: 10px;
+}
+
+#person {
+  display: flex;
+  flex-direction: column;
+}
+#career {
+  display: flex;
+  flex-direction: column;
+}
