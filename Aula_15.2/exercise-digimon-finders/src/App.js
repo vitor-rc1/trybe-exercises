@@ -17,7 +17,7 @@ class App extends React.Component {
 
   requestDigimon = async () => {
     const { searchDigimon } = this.state;
-    if (searchDigimon) {
+    if (searchDigimon.trim()) {
       fetch(`https://digimon-api.vercel.app/api/digimon/name/${searchDigimon}`)
         .then((res) => res.json())
         .then((results) => this.setState((state) => ({
