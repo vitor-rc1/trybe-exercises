@@ -1,33 +1,34 @@
 import React from 'react';
-import TrafficSignal from './TrafficSignal';
+import Cars from './Cars';
 import './App.css';
+
 import CarsContext from './context/CarsContext';
 
 export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      signalColor: 'red',
+        redCar: false, 
+        blueCar: false, 
+        yellowCar: false,
     };
-
-    this.changeSignal = this.changeSignal.bind(this);
+    this.moveCar = this.moveCar.bind(this)
   }
 
-  changeSignal(color) {
-    this.setState({ signalColor: color })
+  moveCar(color) {
+    const stateActual = this.state[color]
+    this.setState(() => ({ [color]: !stateActual }));
   }
 
-  render(){
-    const { signalColor } = this.state;
-    const contexValue = {
-      signalColor,
-      changeSignal: this.changeSignal,
+  render() {
+    const contextValue = {
+      ...this.state,
+      moveCar: this.moveCar,
     }
-
     return (
-      <CarsContext.Provider value={ contexValue } >
-        <TrafficSignal />
-      </CarsContext.Provider >
+      <CarsContext.Provider value={ contextValue }>
+        <Cars/>
+      </CarsContext.Provider>
     );
   }
 }
