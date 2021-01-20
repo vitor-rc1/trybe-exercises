@@ -1,12 +1,12 @@
 import React from 'react';
-import TrafficSignal from './TrafficSignal';
+import Cars from './Cars';
 import './App.css';
-import Provider from './context/Provider';
+import Provider from './context/Provider'
 
 export default function App() {
   return (
     <Provider >
-      <TrafficSignal />
-    </Provider >
+      <Cars />
+    </Provider>
   );
 }
